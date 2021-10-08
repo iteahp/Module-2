@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Module 2.iml" filepath="$PROJECT_DIR$/.idea/Module 2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Bài 1 -Introduction to Java/SystemTime/SystemTime.iml" filepath="$PROJECT_DIR$/Bài 1 -Introduction to Java/SystemTime/SystemTime.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Bài 1 -Introduction to Java/UsdChangeVnd/UsdChangeVnd.iml" filepath="$PROJECT_DIR$/Bài 1 -Introduction to Java/UsdChangeVnd/UsdChangeVnd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bai2 - Vonglap/bai2 - Vonglap.iml" filepath="$PROJECT_DIR$/bai2 - Vonglap/bai2 - Vonglap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bai3 - Mảng/bai3 - Mảng.iml" filepath="$PROJECT_DIR$/bai3 - Mảng/bai3 - Mảng.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Bài 1 -Introduction to Java/bmi-calculator/bmi-calculator.iml" filepath="$PROJECT_DIR$/Bài 1 -Introduction to Java/bmi-calculator/bmi-calculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Bài 1 -Introduction to Java/day-of-month/day-of-month.iml" filepath="$PROJECT_DIR$/Bài 1 -Introduction to Java/day-of-month/day-of-month.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Bài 1 -Introduction to Java/dayOfMonth/dayOfMonth.iml" filepath="$PROJECT_DIR$/Bài 1 -Introduction to Java/dayOfMonth/dayOfMonth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Bài 1 -Introduction to Java/giai_Pt_bac1/giai_Pt_bac1.iml" filepath="$PROJECT_DIR$/Bài 1 -Introduction to Java/giai_Pt_bac1/giai_Pt_bac1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Bài 1 -Introduction to Java/leap-year-calculator/leap-year-calculator.iml" filepath="$PROJECT_DIR$/Bài 1 -Introduction to Java/leap-year-calculator/leap-year-calculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Bài 1 -Introduction to Java/numberToString/numberToString.iml" filepath="$PROJECT_DIR$/Bài 1 -Introduction to Java/numberToString/numberToString.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Bài 1 -Introduction to Java/operater-expression/operater-expression.iml" filepath="$PROJECT_DIR$/Bài 1 -Introduction to Java/operater-expression/operater-expression.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Bài 1 -Introduction to Java/say-Hello/say-Hello.iml" filepath="$PROJECT_DIR$/Bài 1 -Introduction to Java/say-Hello/say-Hello.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Bài 1 -Introduction to Java/variable-dataType/variable-dataType.iml" filepath="$PROJECT_DIR$/Bài 1 -Introduction to Java/variable-dataType/variable-dataType.iml" />
+    </modules>
+  </component>
+</project>

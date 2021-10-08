@@ -24,7 +24,7 @@ public class IsPrime {
                 res+= number+" is Prime";
             }else res+= number + " is not Prime";
         }
-        System.out.printf(res);
+        System.out.println(res);
     }
 
 }
