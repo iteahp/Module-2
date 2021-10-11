@@ -16,8 +16,12 @@ public class FindMin {
         for (int i=0;i<arr.length;i++){
             System.out.print(arr[i]+"\t");
         }
+        int min = arr[0];
         for (int i=0;i<arr.length;i++){
-
+            if (arr[i]<min){
+                min =arr[i];
+            }
         }
+        System.out.println("Min of Array = " + min);
     }
 }
