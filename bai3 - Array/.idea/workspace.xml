@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd4a1e96-6f99-48ea-8235-a06a22515904" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../bai2 - Vonglap/src/com/company/Draw.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai2 - Vonglap/src/com/company/PrimeFirst.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai2 - Vonglap/src/com/company/PrimeLessThan100.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/baitap/src/com/company/AddElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/baitap/src/com/company/DeleteElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thuchanh/src/com/company/FToC.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thuchanh/src/com/company/FindElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thuchanh/src/com/company/FindMax.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thuchanh/src/com/company/FindMin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thuchanh/src/com/company/ReverseArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bai2 - Vonglap/out/production/bai2 - Vonglap/com/company/IsPrime.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bai2 - Vonglap/out/production/bai2 - Vonglap/com/company/IsPrime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bai2 - Vonglap/src/com/company/IsPrime.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai2 - Vonglap/src/com/company/IsPrime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thuchanh/src/com/company/StudentPass.java" beforeDir="false" afterPath="$PROJECT_DIR$/thuchanh/src/com/company/StudentPass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai4-OOP/thuchanh/src/com/company/Main1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai4-OOP/thuchanh/src/com/company/Main1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +25,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../New folder" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -46,6 +38,8 @@
       <workItem from="1633662554194" duration="52000" />
       <workItem from="1633664848550" duration="22000" />
       <workItem from="1633665669254" duration="787000" />
+      <workItem from="1636000622176" duration="548000" />
+      <workItem from="1636010334063" duration="52000" />
     </task>
     <servers />
   </component>

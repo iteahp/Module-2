@@ -25,10 +25,12 @@ public class PrimeFirst {
 
     public static void main(String[] args) {
 
-        int count = 0;
-            for (int number=1;count<20;number++){
+        int count = 1;
+            for (int number=13;count<=20;number++){
                 if (isPrime(number)){
-                    System.out.print(number +",");
+                    if (count ==20){
+                        System.out.print(number);
+                    }
                     count++;
                 }
             }
