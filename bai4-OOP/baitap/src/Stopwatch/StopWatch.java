@@ -15,7 +15,15 @@ public class StopWatch {
     }
     public void stop(){
         this.endTime = LocalDateTime.now();
-
+    }
+    public LocalDateTime getStartTime(){
+        return startTime;
+    }
+    public LocalDateTime getEndTime(){
+        return endTime;
+    }
+    public int getElapsedTime(){
+        return getEndTime().getSecond()-getStartTime().getSecond();
     }
     
 
