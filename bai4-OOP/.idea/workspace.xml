@@ -2,30 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="545fa1fb-f470-4c35-93da-4b9f79ea1314" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Bài 1 -Introduction to Java/.idea/Bài 1 -Introduction to Java.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/bai4-OOP.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/baitap/src/Stopwatch/StopWatch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thuchanh/untitled104.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai5/.idea/bai5.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai5/baitap/baitap.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai5/baitap/demo/demo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai5/baitap/demo/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai5/baitap/src/AccessModifier/Circle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai5/baitap/src/AccessModifier/TestCircle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai5/thuchanh/StaticProperty/src/Car.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai5/thuchanh/StaticProperty/src/TestStaticProperty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai5/thuchanh/staticMethod/src/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai5/thuchanh/staticMethod/src/TestStaticMethod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai5/thuchanh/staticMethod/staticMethod.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bai2 - Vonglap/out/production/bai2 - Vonglap/com/company/Draw.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bai2 - Vonglap/out/production/bai2 - Vonglap/com/company/Draw.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bai2 - Vonglap/out/production/bai2 - Vonglap/com/company/PrimeFirst.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bai2 - Vonglap/out/production/bai2 - Vonglap/com/company/PrimeFirst.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bai2 - Vonglap/src/com/company/Draw.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai2 - Vonglap/src/com/company/Draw.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bai2 - Vonglap/src/com/company/PrimeFirst.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai2 - Vonglap/src/com/company/PrimeFirst.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bai3 - Array/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../bai3 - Array/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bai6/baitap/CircleAndCylinder/src/Circle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bai6/baitap/CircleAndCylinder/src/Cylinder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bai6/baitap/CircleAndCylinder/src/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bai6/baitap/Point2DAndPoint3D/src/Point2D.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bai6/baitap/Point2DAndPoint3D/src/Point3D.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bai6/baitap/Point2DAndPoint3D/src/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bai6/baitap/PointAndMovablePoint/src/MovablePoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bai6/baitap/PointAndMovablePoint/src/Point.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bai6/baitap/PointAndMovablePoint/src/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bai6/baitap/Triangle/src/Shape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bai6/baitap/Triangle/src/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bai6/baitap/Triangle/src/Triangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bai6/thuchanh/src/Circle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bai6/thuchanh/src/Rectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bai6/thuchanh/src/Shape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bai6/thuchanh/src/ShapeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bai6/thuchanh/src/Square.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai2 - Vonglap/baitapvenha/src/bai4.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai2 - Vonglap/baitapvenha/src/bai4.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../bai3 - Array/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../bai3 - Array/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bai3 - Array/thuchanh/src/com/company/StudentPass.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai3 - Array/thuchanh/src/com/company/StudentPass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baitap/src/Stopwatch/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/baitap/src/Stopwatch/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thuchanh/src/com/company/Main1.java" beforeDir="false" afterPath="$PROJECT_DIR$/thuchanh/src/com/company/Main1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai3 - Array/baitap/out/production/baitap/com/company/AddElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bai3 - Array/baitap/out/production/baitap/com/company/AddElement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai3 - Array/baitap/out/production/baitap/com/company/CountStringCharacters.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bai3 - Array/baitap/out/production/baitap/com/company/CountStringCharacters.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +58,7 @@
       <workItem from="1633924087038" duration="77000" />
       <workItem from="1636079052711" duration="59000" />
       <workItem from="1636103376838" duration="21000" />
+      <workItem from="1636445912510" duration="124000" />
     </task>
     <servers />
   </component>
