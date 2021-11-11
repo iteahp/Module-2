@@ -32,7 +32,7 @@ public class Controller {
             if (j<id){
                 newArr[j] =arr[j];
             }else if (j>id){
-                newArr[j]=arr[j+1];
+                newArr[j-1]=arr[j];
             }
         }
         return newArr;
@@ -62,6 +62,7 @@ public class Controller {
             }
         }
         arr[index]=addNhanVien();
+        arr[index].setId(id);
         return arr;
     }
 
