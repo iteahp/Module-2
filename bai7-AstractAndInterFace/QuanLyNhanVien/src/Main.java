@@ -5,8 +5,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         NhanVien[] nhanViens = new NhanVien[3];
         nhanViens[0] = new CongNhan("Nam","Hải Phòng",20,300,20);
-        nhanViens[1] = new KySu(1.5,"Duyên","Hà Nội",23,500,25);
-        nhanViens[2] = new KySu(2.5,"Hải","Hà Nam",30,600,20);
+        nhanViens[1] = new KySu("Duyên","Hà Nội",23,500,25,1.5);
+        nhanViens[2] = new KySu("Hải","Hà Nam",30,600,20,2.5);
         while (true) {
             System.out.println("Quản lý nhân viên ");
             System.out.println("1.Thêm nhân viên ");
@@ -18,7 +18,7 @@ public class Main {
             System.out.println("7.Exit ");
             System.out.println(" Lựa chọn của bạn ");
             int choice = scanner.nextInt();
-
+            scanner.nextLine();
             switch (choice){
                 case 1 :
                     nhanViens =Controller.update(nhanViens);
@@ -36,7 +36,9 @@ public class Main {
                     Controller.show(nhanViens);
                     break;
                 case 6 :
+
                 case 7 :
+                    return;
 
             }
         }

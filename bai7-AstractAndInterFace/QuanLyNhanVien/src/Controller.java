@@ -3,8 +3,7 @@ import java.util.Scanner;
 public class Controller {
     static Scanner scanner = new Scanner(System.in);
     public static KySu creatKysu(){
-        System.out.println("Nhập hệ số lương ");
-        double coefficientsSalary = scanner.nextDouble();
+
         scanner.nextLine();
         System.out.println("Nhập tên :");
         String name = scanner.nextLine();
@@ -16,8 +15,10 @@ public class Controller {
         int salary = scanner.nextInt();
         System.out.println("Nhập số ngày làm ");
         int workingDay = scanner.nextInt();
-
-        KySu kySu = new KySu(coefficientsSalary,name,address,age,salary,workingDay);
+        System.out.println("Nhập hệ số lương ");
+        double coefficientsSalary = scanner.nextDouble();
+        scanner.nextLine();
+        KySu kySu = new KySu(name,address,age,salary,workingDay,coefficientsSalary);
         return kySu;
     }
     public static CongNhan creatCongNhan(){
@@ -31,6 +32,7 @@ public class Controller {
         int salary = scanner.nextInt();
         System.out.println("Nhập số ngày làm ");
         int workingDay = scanner.nextInt();
+        scanner.nextLine();
         CongNhan congNhan= new CongNhan(name,address,age,salary,workingDay);
         return congNhan;
     }
@@ -116,11 +118,9 @@ public class Controller {
                 System.out.println("Không tìm thấy tên");
                 }
         }
-        public static void edit(NhanVien[] nhanViens){
-            int count =0;
-            scanner.nextLine();
+        public static void edit(NhanVien[] nhanViens) {
+            int count = 0;
             System.out.println("Nhập tên muốn sửa thông tin ");
-            scanner.nextLine();
             String name = scanner.nextLine();
             for (int i = 0; i < nhanViens.length; i++) {
                 if (name.equals(nhanViens[i].getName())) {
@@ -128,11 +128,21 @@ public class Controller {
                     count++;
                 }
             }
-            System.out.println("Thông tin của  "+count+" nhân viên tên " + name);
-            System.out.println("Nhập id nhân viên muốn sửa ");
-            int id = scanner.nextInt();
-            for (int i = 0; i < nhanViens.length; i++) {
-            }
+            if (count != 0) {
+                System.out.println("Thông tin của  " + count + " nhân viên tên " + name);
+                System.out.println("Nhập id nhân viên muốn sửa ");
+                int id = scanner.nextInt();
+                int index = 0;
+                for (int i = 0; i < nhanViens.length; i++) {
+                    if (nhanViens[i].getId() == id) {
+                        index = i;
+                    }
+                }
+                if (nhanViens[index] instanceof CongNhan) {
+                    nhanViens[index] = creatCongNhan();
+                } else nhanViens[index] = creatKysu();
+                nhanViens[index].setId(id);
+            }else System.out.println("Không tìm thấy tên nhân viên tên :  " +name);
         }
     }
 

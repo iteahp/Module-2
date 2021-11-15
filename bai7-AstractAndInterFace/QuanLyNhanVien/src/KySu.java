@@ -4,7 +4,7 @@ public class KySu extends NhanVien {
     public KySu() {
     }
 
-    public KySu(double coefficientsSalary, String name, String address, int age, int salary, int workingDay) {
+    public KySu( String name, String address, int age, int salary, int workingDay,double coefficientsSalary) {
         super(name, address, age, salary, workingDay);
         this.coefficientsSalary =coefficientsSalary;
     }
@@ -25,7 +25,7 @@ public class KySu extends NhanVien {
     @Override
     public String toString() {
         return "KySu{" +
-                "coefficientsSalary=" + coefficientsSalary+" , " +super.toString()+
+                 super.toString()+" , coefficientsSalary=" + coefficientsSalary+
                 '}';
     }
 }

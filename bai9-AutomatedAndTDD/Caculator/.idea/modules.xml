@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Caculator.iml" filepath="$PROJECT_DIR$/Caculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apj-junit-calculator-develop.iml" filepath="$PROJECT_DIR$/apj-junit-calculator-develop.iml" />
     </modules>
   </component>
 </project>
