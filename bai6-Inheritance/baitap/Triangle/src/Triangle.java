@@ -39,7 +39,8 @@ public class Triangle extends Shape{
         this.side3 = side3;
     }
     public double getArea(){
-        return Math.sqrt(getPerimeter()*(getPerimeter()-side1)*(getPerimeter()-side2)*(getPerimeter()-side3));
+        double p = getPerimeter()/2;
+        return Math.sqrt(p*(p-side1)*(p-side2)*(p-side3));
     }
     public double getPerimeter(){
         return side1 + side2 + side3;
