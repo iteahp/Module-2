@@ -79,29 +79,31 @@ public class ControllerNhanVien {
             System.out.println(" Thông tin của "+count+ " nhân viên tên " +name );
         }
     }
-//    public static  void delete(){
-//        NhanVien[] newNhanvien = new NhanVien[listNV.length-1];
-//        System.out.println("Nhập tên muốn xóa ");
-//        String name = scanner.nextLine();
-//        int count = 0;
-//        for (int i = 0; i < listNV.length; i++) {
-//            if (name.equals(listNV[i].getName())){
-//                count++;
-//                for (int j = 0; j < newNhanvien.length; j++) {
-//                    if (j<i){
-//                        newNhanvien[j] = listNV[j];
-//                    }else if (j>i) {
-//                        newNhanvien[j - 1] = listNV[j];
-//                    }
-//                }
-//            }
-//            if (count==0){
-//                System.out.println("Không thấy tên trong danh sách");
-//            }else System.out.println("Đã xóa " +count+" nhân viên tên "+name);
-//        }
-//
-//        listNV =newNhanvien;
-//    }
+    public static  void delete(){
+        NhanVien[] newNhanvien = new NhanVien[listNV.length-1];
+        System.out.println("Nhập tên muốn xóa ");
+        String name = scanner.nextLine();
+        int length = listNV.length;
+        int count = 0;
+        for (int i = 0; i < length; i++) {
+            if (name.equals(listNV[i].getName())){
+                count++;
+                for (int j = 0; j < newNhanvien.length; j++) {
+                    if (j<i){
+                        newNhanvien[j] = listNV[j];
+                    }else if (j>i) {
+                        newNhanvien[j - 1] = listNV[j];
+                    }
+                }
+                length--;
+            }
+            if (count==0){
+                System.out.println("Không thấy tên trong danh sách");
+            }else System.out.println("Đã xóa " +count+" nhân viên tên "+name);
+        }
+
+        listNV =newNhanvien;
+    }
 
 
 
