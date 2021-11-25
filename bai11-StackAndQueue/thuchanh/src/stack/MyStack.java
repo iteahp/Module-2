@@ -7,8 +7,7 @@ public class MyStack<E> {
     private int size;
     private E[] elements;
     MyStack(){
-        Object[] newElement = new Object[1];
-        elements = (E[]) newElement;
+        elements = (E[]) new  Object[1];
     }
     public void add(E e){
         if (size ==elements.length){
@@ -18,12 +17,8 @@ public class MyStack<E> {
         size++;
     }
     public E pop(){
-        Object[] newElement = new Object[elements.length-1];
-        for (int i = 0; i < size; i++) {
-            newElement[i] =elements[i];
-        }
         E e = elements[size-1];
-        elements =(E[]) newElement;
+        elements[size-1] =null;
         size--;
         return e;
     }

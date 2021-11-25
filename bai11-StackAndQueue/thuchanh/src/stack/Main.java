@@ -1,5 +1,9 @@
 package stack;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         MyStack<Integer> stack = new MyStack<>();
@@ -12,5 +16,6 @@ public class Main {
         stack.pop();
         stack.show();
         System.out.println(stack.get());
+
     }
 }
