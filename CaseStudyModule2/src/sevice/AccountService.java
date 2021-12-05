@@ -9,7 +9,7 @@ import java.util.List;
 public class AccountService implements IAccountService{
     List<Account> accounts = new ArrayList<>();
     ReadAndWriteFile<Account> accountReadAndWriteFile = new ReadAndWriteFile<>();
-    private final String FILE_PATH = "C:\\Users\\MSI\\Desktop\\Module2\\CaseStudyModule2\\account.txt";
+    public static final String FILE_PATH = "C:\\Users\\MSI\\Desktop\\Module2\\CaseStudyModule2\\account.txt";
     public AccountService(){
         accountReadAndWriteFile.readFromFile(FILE_PATH);
     }

@@ -11,7 +11,7 @@ import java.util.List;
 
 public class RevenueService implements IRevenue {
     public List<Revenue> revenues = new ArrayList<>();
-    private final String FILE_PATH = "C:\\Users\\MSI\\Desktop\\Module2\\CaseStudyModule2\\doanhthu.txt";
+    public static final String FILE_PATH = "C:\\Users\\MSI\\Desktop\\Module2\\CaseStudyModule2\\doanhthu.txt";
     ReadAndWriteFile<Revenue> revenueReadAndWriteFile = new ReadAndWriteFile<>();
 
     @Override

@@ -13,12 +13,14 @@ public class ComputerService implements IComputerService {
    public static List<Computer> computers = new ArrayList<>();
     OrderService orderService = new OrderService();
     RevenueService revenueService = new RevenueService();
-     private final String FILE_PATH = "C:\\Users\\MSI\\Desktop\\Module2\\CaseStudyModule2\\computer.txt";
+     public static final String FILE_PATH = "C:\\Users\\MSI\\Desktop\\Module2\\CaseStudyModule2\\computer.txt";
     ReadAndWriteFile<Computer> computerReadAndWriteFile = new ReadAndWriteFile<>();
 
+   public ComputerService(){
+        computers = computerReadAndWriteFile.readFromFile(FILE_PATH);
+    }
     @Override
     public List<Computer> findAll() {
-       computers = computerReadAndWriteFile.readFromFile(FILE_PATH);
         return computers;
     }
 
@@ -36,7 +38,6 @@ public class ComputerService implements IComputerService {
 
     @Override
     public Computer edit(int index) {
-        computerReadAndWriteFile.writeToFile(FILE_PATH,computers);
         return computers.get(index);
     }
 

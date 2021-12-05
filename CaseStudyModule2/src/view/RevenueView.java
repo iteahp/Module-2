@@ -31,6 +31,16 @@ public class RevenueView {
                     showAll();
                     break;
                }
+               case 2: {
+
+               }
+               case 0: {
+                   System.out.println("Đã trở lại ");
+               }
+               default:{
+                   System.err.println("Vui lòng nhập đúng danh mục");
+                   break;
+               }
            }
        }while (choice!=0);
    }

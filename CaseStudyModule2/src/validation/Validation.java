@@ -10,7 +10,7 @@ public class Validation {
     public static final String MONEY_ON_HOUR_REGEX = "^[0-9]+$";
     public static final String ACCOUNT_NAME_REGEX = "^[a-zA-Z0-9]{5,16}$";
     public static final String PASSWORD_REGEX = "^[a-zA-Z0-9]{5,16}$";
-    public static final String ORDER_NAME_REGEX = "^[a-zA-Z0-9]+$";
+    public static final String ORDER_NAME_REGEX = "^[a-zA-Z0-9 ]+$";
     public static final String ORDER_PRICE_REGEX = "^[0-9]+$";
     public static final String ID = "^[0-9]+$";
     public static final String CHOICE = "^[0-9]+$";

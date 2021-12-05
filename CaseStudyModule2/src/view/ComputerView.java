@@ -1,5 +1,6 @@
 package view;
 
+import io.ReadAndWriteFile;
 import model.Computer;
 import sevice.ComputerService;
 import validation.Validation;
@@ -12,6 +13,7 @@ public class ComputerView {
     ComputerService computerService = new ComputerService();
     RevenueView revenueView = new RevenueView();
     AccountView accountView = new AccountView();
+    ReadAndWriteFile<Computer> readAndWriteFile = new ReadAndWriteFile<>();
     public void computerShowList(){
         System.out.println("Danh sách có "+computerService.findAll().size()+" máy");
         for (Computer computer: computerService.findAll()) {
@@ -44,6 +46,7 @@ public class ComputerView {
         String name =Validation.validation(" Nhập tên máy ","Không đúng định dạng -- Vui lòng nhập lại",Validation.COMPUTER_NAME_REGEX);
         computerService.findAll().get(index).setName(name);
         System.out.println(" Bạn đã thay đổi thành công ");
+        readAndWriteFile.writeToFile(ComputerService.FILE_PATH, computerService.findAll());
     }
     public void showComputer(){
         int index = fineIndexByIdComputer();
@@ -53,8 +56,7 @@ public class ComputerView {
     }
 
     public int fineIndexByIdComputer(){
-        System.out.println("Nhập id computer : ");
-        int id = Integer.parseInt(scanner.nextLine());
+        int id = Integer.parseInt(Validation.validation("Nhập id computer","Id chỉ là số -- Nhập lại",Validation.ID));
         return   computerService.findIndexById(id);
     }
 
@@ -68,19 +70,31 @@ public class ComputerView {
                     System.out.println("Tìm thấy máy có trong danh sách ---Bạn có muốn xóa không ");
                     System.out.println("1. Có ");
                     System.out.println("0. Không");
-                    choice = Integer.parseInt(scanner.nextLine());
-                    if (choice==1) {
-                        computerService.delete(index);
-                        break;
+                    choice = Integer.parseInt(Validation.validation("Lựa chọn","Không đúng định dạng - Vui lòng nhập lại",Validation.CHOICE));
+                    switch (choice) {
+                        case 1:{
+                          computerService.delete(index);
+                            System.out.println("Đã xóa xong");
+                            choice =0;
+                            break;
+                      }
+                        case 0:{
+                            System.out.println("Bạn đã không xóa");
+                            break;
+                        }
+                        default:{
+                            System.err.println("Vui lòng nhập đúng danh mục");
+                            break;
+                        }
                     }
                 }while (choice!=0);
-                System.out.println("Bạn có muốn xóa tiếp không");
-                System.out.println("Nếu không hãy ấn 'Q ' để trở lại menu --Hoặc nhấn 1 nút bất kỳ để xóa tiếp");
-                String quit = scanner.nextLine();
-                if (quit.equalsIgnoreCase("Q")){
-                    break;
-                }
             }else System.out.println("Không thấy máy có trong danh sách ");
+            System.out.println("Bạn có muốn xóa tiếp không");
+            System.out.println("Nếu không hãy ấn 'Q ' để trở lại menu --Hoặc nhấn 1 nút bất kỳ để xóa tiếp");
+            String quit = scanner.nextLine();
+            if (quit.equalsIgnoreCase("Q")){
+                break;
+            }
         }
     }
     public void menuComputerDisplay(){
@@ -89,7 +103,7 @@ public class ComputerView {
             System.out.println("1 . Hiện thị danh sách máy ");
             System.out.println("2 . Hiện thị chi tiết máy  ");
             System.out.println("0 . Trở về menu ");
-            choice = Integer.parseInt(scanner.nextLine());
+            choice = Integer.parseInt(Validation.validation("Lựa chọn","Không đúng định dạng - Vui lòng nhập lại",Validation.CHOICE));
             switch (choice){
                 case 1 :{
                     computerShowList();
@@ -97,6 +111,14 @@ public class ComputerView {
                 }
                 case 2 :{
                     showComputer();
+                    break;
+                }
+                case 0: {
+                    System.out.println("Đã trở lại ");
+                    break;
+                }
+                default:{
+                    System.err.println("Vui lòng nhập đúng danh mục");
                     break;
                 }
             }
@@ -132,7 +154,7 @@ public class ComputerView {
             System.out.println("1. Tính tiền");
             System.out.println("2. Thêm dịch vụ cho khách");
             System.out.println("0. Thoát");
-            choice = Integer.parseInt(scanner.nextLine());
+            choice = Integer.parseInt(Validation.validation("Lựa chọn","Không đúng định dạng - Vui lòng nhập lại",Validation.CHOICE));
             switch (choice){
                 case 1 :{
                         pay();
@@ -141,6 +163,14 @@ public class ComputerView {
                 case 2: {
                    computerOrder();
                    break;
+                }
+                case 0: {
+                    System.out.println("Đã trở lại");
+                    break;
+                }
+                default:{
+                    System.err.println("Vui lòng nhập đúng danh mục");
+                    break;
                 }
             }
         }while (choice !=0);
@@ -175,12 +205,12 @@ public class ComputerView {
     }
     public void editMoneyOnHour(){
         System.out.println("Menu chỉnh sửa tiền theo giờ ");
-        System.out.println("Nhập giá tiền muốn đổi ");
-        double moneyOnHour =Double.parseDouble(scanner.nextLine());
+        double moneyOnHour =Double.parseDouble(Validation.validation("Nhập giá tiền muốn đổi ","Không đúng định dạng - Nhập lại",Validation.MONEY_ON_HOUR_REGEX));
         for (Computer computer: computerService.findAll()
              ) {
             computer.setMoneyOnHour(moneyOnHour/3600);
         }
+
         System.out.println("Chỉnh sửa xong với giá "+moneyOnHour+" Vnd / H");
     }
     public void menuComputer() {
@@ -198,7 +228,7 @@ public class ComputerView {
             System.out.println("9 . Doanh thu ");
             System.out.println("10 . Chỉnh sửa tính tiền theo giờ  ");
             System.out.println("0 . Đăng xuất ");
-            choice = Integer.parseInt(scanner.nextLine());
+            choice = Integer.parseInt(Validation.validation("Lựa chọn","Không đúng định dạng - Vui lòng nhập lại",Validation.CHOICE));
             switch (choice) {
                 case 1: {
                     menuComputerDisplay();
@@ -238,6 +268,14 @@ public class ComputerView {
                 }
                 case 10: {
                     editMoneyOnHour();
+                    break;
+                }
+                case 0 : {
+                    System.out.println("Đã trở lại ");
+                    break;
+                }
+                default:{
+                    System.err.println("Vui lòng nhập đúng danh mục");
                     break;
                 }
             }

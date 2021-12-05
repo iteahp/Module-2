@@ -1,5 +1,6 @@
 package view;
 
+import io.ReadAndWriteFile;
 import model.Order;
 import sevice.OrderService;
 import validation.Validation;
@@ -9,6 +10,7 @@ import java.util.Scanner;
 public class OrderView {
         Scanner scanner  = new Scanner(System.in);
         OrderService orderService = new OrderService();
+        ReadAndWriteFile<Order> readAndWriteFile = new ReadAndWriteFile<>();
         public void showOrder(){
                 for (Order order: orderService.findAll()) {
                         System.out.println(order);
@@ -27,14 +29,12 @@ public class OrderView {
                 }
 
                 String name = Validation.validation("Nhập tên dịch vụ","Không đúng định dạng-- Vui lòng nhập lại",Validation.ORDER_NAME_REGEX);
-                System.out.println("Nhập giá ");
                 double price = Double.parseDouble(Validation.validation("Nhập giá dịch vụ","Không đúng định dạng -- Nhập lại",Validation.ORDER_PRICE_REGEX));
                 Order order = new Order(id,name,price);
                 return order;
         }
         public int findIndexByIdOrder(){
-                System.out.println("Nhập id order ");
-                int id = Integer.parseInt(scanner.nextLine());
+                int id = Integer.parseInt(Validation.validation("Nhập id dịch vụ","Id chỉ là số -- Nhập lại",Validation.ID));
                 return orderService.findIndexById(id);
         }
         public void deleteOrder(){
@@ -52,21 +52,36 @@ public class OrderView {
                                 System.out.println("1. Thay đổi tên");
                                 System.out.println("2. Thay đổi giá");
                                 System.out.println("0. Trở lại ");
-                                choice = Integer.parseInt(scanner.nextLine());
+                                choice = Integer.parseInt(Validation.validation("Lựa chọn","Không đúng định dạng - Vui lòng nhập lại",Validation.CHOICE));
                                 switch (choice){
-                                        case 1 :
+                                        case 1 :{
                                                 System.out.println("Nhập tên mới ");
                                                 orderService.findAll().get(index).setName(scanner.nextLine());
+                                                System.out.println("Thay đổi xong ");
                                                 break;
-                                        case 2 :
+                                        }
+
+                                        case 2 :{
                                                 System.out.println("Nhập giá mới ");
                                                 double price = Double.parseDouble(scanner.nextLine());
                                                 orderService.findAll().get(index).setPrice(price);
+                                                System.out.println("Thay đổi xong ");
                                                 break;
+                                        }
+                                        case 0: {
+                                                System.out.println("Đã trở lại ");
+                                                break;
+                                        }
+                                        default:{
+                                                System.err.println("Vui lòng nhập đúng danh mục");
+                                                break;
+                                        }
+
                                 }
-                                System.out.println("Thay đổi xong ");
+
                         }while (choice!=0);
                 }else System.out.println("Không thấy có trong danh sách dịch vụ ");
+                readAndWriteFile.writeToFile(OrderService.FILE_PATH, orderService.findAll());
         }
         public void menuOrder(){
                 int choice = -1;
@@ -77,7 +92,7 @@ public class OrderView {
                         System.out.println("3.Sửa dịch vụ ");
                         System.out.println("4. Xóa dịch vụ");
                         System.out.println("0. Trở lại ");
-                        choice = Integer.parseInt(scanner.nextLine());
+                        choice = Integer.parseInt(Validation.validation("Lựa chọn","Không đúng định dạng - Vui lòng nhập lại",Validation.CHOICE));
                         switch (choice){
                                 case 1 : {
                                         showOrder();
@@ -93,6 +108,13 @@ public class OrderView {
                                 }
                                 case 4 :{
                                         deleteOrder();
+                                        break;
+                                }
+                                case 0: {
+                                        System.out.println("Đã trở lại ");
+                                }
+                                default:{
+                                        System.err.println("Vui lòng nhập đúng danh mục");
                                         break;
                                 }
                         }

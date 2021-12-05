@@ -1,5 +1,6 @@
 package view;
 
+import io.ReadAndWriteFile;
 import model.Account;
 import sevice.AccountService;
 import validation.Validation;
@@ -9,6 +10,7 @@ import java.util.Scanner;
 public class AccountView {
     Scanner scanner = new Scanner(System.in);
     AccountService accountService = new AccountService();
+    ReadAndWriteFile<Account> readAndWriteFile = new ReadAndWriteFile<>();
 
 
     public void showAccount(){
@@ -79,14 +81,16 @@ public class AccountView {
                         System.out.println("Đổi mật khẩu thành công");
                         break;
                     }
-                    default:
+                    default:{
                         System.err.println("Vui lòng nhập đúng danh mục");
                         break;
+                    }
                 }
             }while (choice!=0);
 
 
         }
+        readAndWriteFile.writeToFile(AccountService.FILE_PATH,accountService.findAll());
     }
     public void menuAccount(){
         int choice = -1;
@@ -115,6 +119,13 @@ public class AccountView {
                     showAccount();
                     break;
                 }
+                case 0: {
+                    System.out.println("Đã trở lại");
+                }
+                default:{
+                    System.err.println("Vui lòng nhập đúng danh mục");
+                    break;
+                }
             }
         }while (choice!=0);
 
@@ -141,6 +152,10 @@ public class AccountView {
                 }
                 case 0:{
                     System.out.println("Xin cảm ơn và hẹn gặp lại");
+                    break;
+                }
+                default:{
+                    System.err.println("Vui lòng nhập đúng danh mục");
                     break;
                 }
             }

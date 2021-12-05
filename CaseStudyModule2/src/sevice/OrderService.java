@@ -9,7 +9,7 @@ import java.util.List;
 
 public class OrderService implements IOrder {
     public static List<Order> orders = new ArrayList<>();
-    private final String FILE_PATH = "C:\\Users\\MSI\\Desktop\\Module2\\CaseStudyModule2\\order.txt";
+    public static final String FILE_PATH = "C:\\Users\\MSI\\Desktop\\Module2\\CaseStudyModule2\\order.txt";
     ReadAndWriteFile<Order> computerReadAndWriteFile = new ReadAndWriteFile<>();
 
     @Override
