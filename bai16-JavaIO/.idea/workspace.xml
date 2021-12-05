@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4cd43b21-ba86-429f-9c6c-ff14f338da6b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/thuchanh/src/sumNumberInFile/ReadFileExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai13-ThuatToanTimKiem/MiniTest/src/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai13-ThuatToanTimKiem/MiniTest/src/view/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai15-XuLyNgoaiLe/thuchanh/out/production/thuchanh/IllegalTriangleException/IllegalTriangleException.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bai15-XuLyNgoaiLe/thuchanh/out/production/thuchanh/IllegalTriangleException/IllegalTriangleException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai15-XuLyNgoaiLe/thuchanh/src/IllegalTriangleException/IllegalTriangleException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai15-XuLyNgoaiLe/thuchanh/src/IllegalTriangleException/IllegalTriangleException.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="21ROVGTtiAEWX53KytsDpzIV3Gw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bai15-XuLyNgoaiLe" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4cd43b21-ba86-429f-9c6c-ff14f338da6b" name="Changes" comment="" />
+      <created>1637900454599</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1637900454599</updated>
+      <workItem from="1637900456139" duration="7000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

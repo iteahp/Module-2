@@ -12,6 +12,8 @@ public interface IProductManager {
    Product delete(int index);
    void sort();
    Product findProductMaxPrice();
+   void readFile();
+   void writeFile();
 
 
 }

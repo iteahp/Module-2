@@ -11,6 +11,14 @@ public class Product {
     public Product() {
     }
 
+    public Product(int id, String name, float price, int quantity, String moTa) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+        this.moTa = moTa;
+    }
+
     public Product(String name, float price, int quantity, String moTa) {
         this.id = idNumber++;
         this.name = name;
@@ -20,13 +28,12 @@ public class Product {
     }
     @Override
     public String toString() {
-        return "Product{" +
+        return
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", price=" + price +
                 ", quantity=" + quantity +
-                ", moTa='" + moTa + '\'' +
-                '}';
+                ", moTa='" + moTa + '\'';
     }
 
 

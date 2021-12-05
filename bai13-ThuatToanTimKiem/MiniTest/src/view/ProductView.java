@@ -23,6 +23,7 @@ public class ProductView {
         Product product = new Product(name,price,quantity,moTa);
         productController.createProduct(product);
     }
+
    public void showProduct(){
        for (int i = 0; i < products.size(); i++) {
               if (i % 5==0 && i!=0){
@@ -34,8 +35,20 @@ public class ProductView {
 
 
     public int findIndexById(){
-        System.out.println("Nhập id sản phẩm : ");
-        int id = Integer.parseInt(scanner.nextLine());
+        boolean isValidId;
+        int id = -1;
+        scanner.nextLine();
+        do {
+            System.out.println("Nhập id:");
+            isValidId = true;
+            String idInput = scanner.nextLine();
+            try {
+                id = Integer.parseInt(idInput);
+            } catch (NumberFormatException e) {
+                isValidId = false;
+                System.err.println("Id phải là số");
+            }
+        }while (!isValidId);
        return productController.findIndexById(id);
     }
     public void edit(){
@@ -80,8 +93,8 @@ public class ProductView {
     public void findProductMaxPrice(){
         System.out.println(" Sản phẩm có giá lớn cao nhất : ");
         System.out.println(productController.findProductPriceMax());
-
     }
+
 
 
 
