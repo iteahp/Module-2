@@ -7,11 +7,11 @@ import java.util.Date;
 public class Revenue implements Serializable {
     private double turnover;
     private String name;
-    private Date time;
+    private LocalDateTime time;
     public Revenue() {
     }
 
-    public Revenue(double turnover, String name, Date time) {
+    public Revenue(double turnover, String name, LocalDateTime time) {
         this.turnover = turnover;
         this.name = name;
         this.time = time;
@@ -33,11 +33,11 @@ public class Revenue implements Serializable {
         this.name = name;
     }
 
-    public Date getTime() {
+    public LocalDateTime getTime() {
         return time;
     }
 
-    public void setTime(Date time) {
+    public void setTime(LocalDateTime time) {
         this.time = time;
     }
 

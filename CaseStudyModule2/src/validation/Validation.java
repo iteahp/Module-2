@@ -14,6 +14,7 @@ public class Validation {
     public static final String ORDER_PRICE_REGEX = "^[0-9]+$";
     public static final String ID = "^[0-9]+$";
     public static final String CHOICE = "^[0-9]+$";
+    public static final String MONEY_ACCOUNT_REGEX = "^[0-9]+$";
 
     public static boolean validateString(String string, String regex) {
         Pattern pattern = Pattern.compile(regex);

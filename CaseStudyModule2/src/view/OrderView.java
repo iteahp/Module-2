@@ -112,6 +112,7 @@ public class OrderView {
                                 }
                                 case 0: {
                                         System.out.println("Đã trở lại ");
+                                        break;
                                 }
                                 default:{
                                         System.err.println("Vui lòng nhập đúng danh mục");

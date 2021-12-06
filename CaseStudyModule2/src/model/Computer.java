@@ -9,8 +9,8 @@ public class Computer implements Serializable {
     private int id;
     private String name;
     private boolean status;
-    private Date startTime;
-    private Date endTime;
+    private long startTime;
+    private long endTime;
    private double date ;
     private double moneyOnHour;
   private  double money ;
@@ -33,19 +33,19 @@ public class Computer implements Serializable {
 
 
 
-    public Date getStartTime() {
+    public long getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Date startTime) {
+    public void setStartTime(long startTime) {
         this.startTime = startTime;
     }
 
-    public Date getEndTime() {
+    public long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Date endTime) {
+    public void setEndTime(long endTime) {
         this.endTime = endTime;
     }
 

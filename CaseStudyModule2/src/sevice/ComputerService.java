@@ -6,7 +6,6 @@ import model.Order;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class ComputerService implements IComputerService {
@@ -52,22 +51,23 @@ public class ComputerService implements IComputerService {
     }
     public void start(int index){
         computers.get(index).setStatus(true);
-        computers.get(index).setStartTime(new Date());
+        computers.get(index).setStartTime(System.currentTimeMillis());
         computerReadAndWriteFile.writeToFile(FILE_PATH,computers);
     }
     public void end(int index){
-        computers.get(index).setEndTime(new Date());
-        double date = (computers.get(index).getEndTime().getTime()-computers.get(index).getStartTime().getTime());
-        computers.get(index).setDate(date);
+        computers.get(index).setEndTime(System.currentTimeMillis());
+        double date = (computers.get(index).getEndTime()-computers.get(index).getStartTime());
+        computers.get(index).setDate(date/1000);
         computerReadAndWriteFile.writeToFile(FILE_PATH,computers);
 
     }
     public double pay(int index){
+         end(index);
         double money = computers.get(index).getMoney()+(computers.get(index).getDate()*computers.get(index).getMoneyOnHour()) ;
         String computerName=computers.get(index).getName();
-        Date computerEndTime = computers.get(index).getEndTime();
+        LocalDateTime computerEndTime = LocalDateTime.now();
         revenueService.save(money,computerName,computerEndTime);
-        return money/100;
+        return (long) money;
     }
     public List<Computer> showComputerOnline(){
         List<Computer> computersOnline = new ArrayList<>();

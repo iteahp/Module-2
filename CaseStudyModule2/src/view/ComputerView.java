@@ -1,7 +1,9 @@
 package view;
 
 import io.ReadAndWriteFile;
+import model.Account;
 import model.Computer;
+import sevice.AccountService;
 import sevice.ComputerService;
 import validation.Validation;
 
@@ -51,7 +53,9 @@ public class ComputerView {
     public void showComputer(){
         int index = fineIndexByIdComputer();
         if (computerService.findAll().get(index).isStatus()){
-            System.out.println("Time = "+ computerService.findAll().get(index).getDate()+" H"+"\t Money = "+computerService.findAll().get(index).getMoney()+" VNĐ");
+            double time = System.currentTimeMillis() - computerService.findAll().get(index).getStartTime();
+            double money = computerService.findAll().get(index).getMoney() + (time/1000) * computerService.findAll().get(index).getMoneyOnHour();
+            System.out.println("Time = "+ time/1000/3600+" H"+"\t Money = "+money+" VNĐ");
         }else System.out.println("Máy đang offline ");
     }
 
@@ -132,7 +136,7 @@ public class ComputerView {
             ) {
                 System.out.println("id = "+computerOnline.getId()+"\t"+computerOnline.getName() + "\t \t Avaiable");
             }
-        }else System.out.println("Không có máy nào đang online cả");
+        }else System.err.println("Không có máy nào đang online cả");
         return isOnline;
     }
     public boolean showComputerOffline(){
@@ -144,7 +148,7 @@ public class ComputerView {
             ) {
                 System.out.println( "id = "+computerOffline.getId()+"\t"+computerOffline.getName() + " \t Disable");
             }
-        }else System.out.println("Không có máy nào đang offline cả");
+        }else System.err.println("Không có máy nào đang offline cả");
         return  isOffline;
     }
     public void menuPay(){
@@ -180,37 +184,56 @@ public class ComputerView {
     public void pay(){
         System.out.println("Tính tiền cho khách ");
         if (showComputerOnline()){
-            int indexComputer = fineIndexByIdComputer();
-            computerService.end(indexComputer);
-            System.out.println("Số tiền cần thanh toán ="+computerService.pay(indexComputer));
-            computerService.resetComputer(indexComputer);
+            while (true){
+                int indexComputer = fineIndexByIdComputer();
+                if (computerService.findAll().get(indexComputer).isStatus()){
+                    System.out.println("Số tiền cần thanh toán ="+computerService.pay(indexComputer));
+                    computerService.resetComputer(indexComputer);
+                    break;
+                }else System.err.println("Id nhập vào là máy đang offline");
+            }
         }
     }
     public void computerOrder(){
         System.out.println("Thêm dịch vụ cho khách");
         showComputerOnline();
-        int indexComputer = fineIndexByIdComputer();
-        orderView.showOrder();
-        int indexOrder = orderView.findIndexByIdOrder();
-        computerService.computerOrder(indexComputer,indexOrder);
-        System.out.println(" Đã thêm dịch vụ xong");
+        while (true){
+            int indexComputer = fineIndexByIdComputer();
+            if (computerService.findAll().get(indexComputer).isStatus()){
+                orderView.showOrder();
+                int indexOrder = orderView.findIndexByIdOrder();
+                computerService.computerOrder(indexComputer,indexOrder);
+                System.out.println(" Đã thêm dịch vụ xong");
+                break;
+            }else System.err.println("Id nhập vào là máy đang offline");
+        }
+
     }
     public void startComputer(){
         System.out.println("Bật máy cho khách");
         if (showComputerOffline()){
-            int index = fineIndexByIdComputer();
-            computerService.start(index);
-            System.out.println("Đã bật " +computerService.findAll().get(index).getName());
+            while (true){
+                int index = fineIndexByIdComputer();
+                if (index>=0){
+                    computerService.start(index);
+                    System.out.println("Đã bật " +computerService.findAll().get(index).getName());
+                    break;
+                }else System.err.println("Không tìm thấy máy theo ID nhập vào");
+            }
+
+
         }
     }
     public void editMoneyOnHour(){
+        AccountService accountService  = new AccountService();
         System.out.println("Menu chỉnh sửa tiền theo giờ ");
         double moneyOnHour =Double.parseDouble(Validation.validation("Nhập giá tiền muốn đổi ","Không đúng định dạng - Nhập lại",Validation.MONEY_ON_HOUR_REGEX));
-        for (Computer computer: computerService.findAll()
-             ) {
+        for (Computer computer: computerService.findAll()) {
             computer.setMoneyOnHour(moneyOnHour/3600);
         }
-
+        for (Account acc: accountService.findAll()) {
+            acc.setMoneyOnHour(moneyOnHour/3600);
+        }
         System.out.println("Chỉnh sửa xong với giá "+moneyOnHour+" Vnd / H");
     }
     public void menuComputer() {

@@ -9,10 +9,10 @@ public class Account implements Serializable {
     private String account;
     private String password;
     private List<Order> order;
-    private float money;
+    private double money;
     private boolean isStatus;
-    private Date startTime;
-    private Date endTime;
+    private long startTime;
+    private long endTime;
     private double playTime;
     private double moneyOnHour;
 
@@ -32,19 +32,19 @@ public class Account implements Serializable {
         isStatus = status;
     }
 
-    public Date getStartTime() {
+    public long getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Date startTime) {
+    public void setStartTime(long startTime) {
         this.startTime = startTime;
     }
 
-    public Date getEndTime() {
+    public long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Date endTime) {
+    public void setEndTime(long endTime) {
         this.endTime = endTime;
     }
 
@@ -88,11 +88,11 @@ public class Account implements Serializable {
         this.order = order;
     }
 
-    public float getMoney() {
+    public double getMoney() {
         return money;
     }
 
-    public void setMoney(float money) {
+    public void setMoney(double money) {
         this.money = money;
     }
 
