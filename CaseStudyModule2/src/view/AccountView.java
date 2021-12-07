@@ -21,11 +21,11 @@ public class AccountView {
 
     public void showAccount(){
         System.out.println("🌸☆🌸☆🌸☆🌸       Danh sách tài khoản      🌸☆🌸☆🌸☆🌸");
-        System.out.printf("%-20s %-20s %-20s %-20s\n","Account ","Password","Money","Order");
+        System.out.printf("%-20s %-20s %-20s %s\n","Account ","Password","Money","Order");
         for (Account account: accountService.findAll()
              ) {
             String[] str = account.toString().split(",");
-            System.out.printf("%-20s %-20s %-20s %-20s\n",str[0],str[1],str[2],str[3]);
+            System.out.printf("%-20s %-20s %-20s %s\n",str[0],str[1],str[2],str[3]);
         }
     }
 
@@ -112,7 +112,7 @@ public class AccountView {
             System.out.println("                                         🌸               3. XÓA TÀI KHOẢN                                 🌸");
             System.out.println("                                         🌸               4. HIỂN THỊ DANH SÁCH TÀI KHOẢN                  🌸");
             System.out.println("                                         🌸               5. NẠP TIỀN CHO TÀI KHOẢN                        🌸");
-            System.out.println("                                         🌸               6. TRỞ LẠI                                       🌸");
+            System.out.println("                                         🌸               0. TRỞ LẠI                                       🌸");
             System.out.println("                                         🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸");
             choice = Integer.parseInt(Validation.validation("🌸☆🌸       Lựa chọn        🌸☆🌸","🌸☆🌸      Không đúng định dạng - Vui lòng nhập lại       🌸☆🌸",Validation.CHOICE));
             switch (choice){
@@ -237,9 +237,9 @@ public class AccountView {
                     while (true){
                         Account accountCheck = creatAccount();
                         if (accountService.loginAccount(accountCheck)){
-                            System.out.printf("%-30s%-30s%-30s%-30s","Tài khoản","Mật khẩu","Tiền","Dịch vụ\n");
+                            System.out.printf("%-30s%-30s%-30s%-100s\n","Tài khoản","Mật khẩu","Tiền","Dịch vụ");
                             String[]str = accountService.findAll().get(indexAccount).toString().split(",");
-                            System.out.printf("%-30s%-30s%-30s%-30s\n",str[0],str[1],str[2],str[3]);
+                            System.out.printf("%-30s%-30s%-30s%-100s\n",str[0],str[1],str[2],str[3]);
                             break;
                         }else System.err.println(" 🌸☆🌸              Tài khoản hoặc mật mã không đúng             🌸☆🌸");
 
@@ -249,8 +249,8 @@ public class AccountView {
                 case 0 :{
                     ComputerService computerService = new ComputerService();
                     indexAccount = findIndexLoginAccount(account);
-                    accountService.end(indexAccount);
-                    computerService.resetComputer(indexComputer);
+                    accountService.end(indexAccount,indexComputer);
+                    computerService.computerWrite();
                     System.out.println(" 🌸☆🌸          Đã trở lại           🌸☆🌸");
                     break;
                 }
@@ -266,7 +266,6 @@ public class AccountView {
 
     private void addOrderLoginAccount(Account account,int indexAccount) {
         OrderView orderView = new OrderView();
-        OrderService orderService =  new OrderService();
         indexAccount = findIndexLoginAccount(account);
          orderView.showOrder();
         while (true){

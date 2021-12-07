@@ -245,9 +245,9 @@ public class ComputerView {
                 }else System.err.println("☆☆☆   Không tìm thấy máy theo ID nhập vào    ☆☆☆");
             }
 
-
         }
     }
+
     public void editMoneyOnHour(){
         AccountService accountService  = new AccountService();
         System.out.println("🌸☆🌸☆🌸☆🌸    Menu chỉnh sửa tiền theo giờ    🌸☆🌸☆🌸☆🌸");
@@ -259,6 +259,8 @@ public class ComputerView {
             acc.setMoneyOnHour(moneyOnHour/3600);
         }
         System.out.println("☆☆☆    Chỉnh sửa xong với giá "+moneyOnHour+" Vnd / H     ☆☆☆");
+        computerService.computerWrite();
+        accountService.accountWrite();
     }
     public void menuComputer() {
         int choice = -1;

@@ -18,6 +18,7 @@ public class RevenueService implements IRevenue {
     }
     @Override
     public List<Revenue> findAll() {
+        revenues = revenueReadAndWriteFile.readFromFile(FILE_PATH);
         return revenues;
     }
 

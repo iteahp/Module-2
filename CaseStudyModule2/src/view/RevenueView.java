@@ -33,13 +33,13 @@ public class RevenueView {
                    }
                }
                if (sum==0){
-                   System.out.println("☆☆☆        Thời gian nhập vào không có doanh thu       ☆☆☆ ");
+                   System.err.println("☆☆☆        Thời gian nhập vào không có doanh thu       ☆☆☆ ");
                }else {
                    System.out.println("☆☆             Tổng doanh thu = " +sum+ "              ☆☆");
                }
                break;
            }catch (Exception e){
-               System.out.println("☆☆☆        Thời gian nhập vào không có doanh thu       ☆☆☆ ");
+               System.err.println("☆☆☆        Thời gian nhập vào không có doanh thu       ☆☆☆ ");
            }
        }
    }
@@ -58,12 +58,12 @@ public class RevenueView {
                    }
                }
                if (sum==0){
-                   System.out.println("☆☆☆        Thời gian nhập vào không có doanh thu       ☆☆☆ ");
+                   System.err.println("☆☆☆        Thời gian nhập vào không có doanh thu       ☆☆☆ ");
                }else {
                    System.out.println("☆☆             Tổng doanh thu = " +sum+ "              ☆☆");
                }               break;
            }catch (Exception e){
-               System.out.println("☆☆☆        Thời gian nhập vào không có doanh thu       ☆☆☆ ");
+               System.err.println("☆☆☆        Thời gian nhập vào không có doanh thu       ☆☆☆ ");
            }
        }
    }
@@ -89,7 +89,7 @@ public class RevenueView {
                }
                break;
            }catch (Exception e){
-               System.out.println("☆☆☆        Thời gian nhập vào không có doanh thu       ☆☆☆ ");
+               System.err.println("☆☆☆        Thời gian nhập vào không có doanh thu       ☆☆☆ ");
            }
        }
 

@@ -16,6 +16,8 @@ public class OrderService implements IOrder {
     }
     @Override
     public List<Order> findAll() {
+        orders = computerReadAndWriteFile.readFromFile(FILE_PATH);
+
         return orders;
     }
 

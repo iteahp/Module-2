@@ -14,7 +14,7 @@ public class Account implements Serializable {
     private long startTime;
     private long endTime;
     private double playTime;
-    private double moneyOnHour;
+    private double moneyOnHour=10000.0/3600.0;
 
     public Account() {
     }

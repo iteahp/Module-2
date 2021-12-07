@@ -20,6 +20,7 @@ public class ComputerService implements IComputerService {
     }
     @Override
     public List<Computer> findAll() {
+        computers = computerReadAndWriteFile.readFromFile(FILE_PATH);
         return computers;
     }
 
@@ -104,6 +105,9 @@ public class ComputerService implements IComputerService {
         computers.get(index).setDate(0.0);
         computers.get(index).setOrder(null);
         computers.get(index).setStatus(false);
+        computerReadAndWriteFile.writeToFile(FILE_PATH,computers);
+    }
+    public void computerWrite(){
         computerReadAndWriteFile.writeToFile(FILE_PATH,computers);
     }
 

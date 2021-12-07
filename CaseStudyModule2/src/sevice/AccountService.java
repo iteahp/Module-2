@@ -19,6 +19,7 @@ public class AccountService implements IAccountService {
 
     @Override
     public List<Account> findAll() {
+        accounts = accountReadAndWriteFile.readFromFile(FILE_PATH);
         return accounts;
     }
 
@@ -72,14 +73,17 @@ public class AccountService implements IAccountService {
         accountReadAndWriteFile.writeToFile(FILE_PATH, accounts);
     }
 
-    public void end(int index) {
+    public void end(int index, int indexComputer) {
+        ComputerService computerService = new ComputerService();
         accounts.get(index).setEndTime(System.currentTimeMillis());
         double playTime = (accounts.get(index).getEndTime() - accounts.get(index).getStartTime());
         accounts.get(index).setPlayTime(playTime / 1000);
-        double moneyPlay = accounts.get(index).getMoney() + (accounts.get(index).getPlayTime() * accounts.get(index).getMoneyOnHour());
+        double moneyPlay =(accounts.get(index).getPlayTime() * accounts.get(index).getMoneyOnHour());
         double money = accounts.get(index).getMoney() - moneyPlay;
         accounts.get(index).setMoney(money);
         accounts.get(index).setStatus(false);
+        accounts.get(index).setOrder(null);
+        computerService.findAll().get(indexComputer).setStatus(false);
         accountReadAndWriteFile.writeToFile(FILE_PATH, accounts);
     }
 
@@ -100,5 +104,8 @@ public class AccountService implements IAccountService {
     public void changePassword(int indexAccount,String passwordNew){
         findAll().get(indexAccount).setPassword(passwordNew);
         accountReadAndWriteFile.writeToFile(FILE_PATH, accounts);
+    }
+    public void accountWrite(){
+       accountReadAndWriteFile.writeToFile(FILE_PATH,accounts);
     }
 }
