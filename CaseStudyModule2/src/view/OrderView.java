@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class OrderView {
         Scanner scanner  = new Scanner(System.in);
         OrderService orderService = new OrderService();
-        ReadAndWriteFile<Order> readAndWriteFile = new ReadAndWriteFile<>();
+
         public void showOrder(){
                 System.out.printf("%-20s %-20s %-20s\n","ID","Tên dịch vụ"," Giá dịch vụ ");
                 for (Order order: orderService.findAll()) {
@@ -42,7 +42,8 @@ public class OrderView {
                 int index = findIndexByIdOrder();
                 if (index>=0){
                         orderService.delete(index);
-                }else System.out.println("☆☆☆                     Không thấy có trong danh sách dịch vụ                ☆☆☆");
+                        System.out.println("☆☆☆      Đã xóa xong      ☆☆☆");
+                }else System.err.println("☆☆☆                     Không thấy có trong danh sách dịch vụ                ☆☆☆");
         }
         public void editOrder(){
                 int index = findIndexByIdOrder();
@@ -56,17 +57,18 @@ public class OrderView {
                                 choice = Integer.parseInt(Validation.validation("☆☆☆       Lựa chọn            ☆☆☆"," ☆☆☆          Không đúng định dạng - Vui lòng nhập lại            ☆☆☆",Validation.CHOICE));
                                 switch (choice){
                                         case 1 :{
-                                                System.out.println("☆☆☆            Nhập tên mới           ☆☆☆ ");
-                                                orderService.findAll().get(index).setName(scanner.nextLine());
+                                                String name = Validation.validation("☆☆☆            Nhập tên dịch vụ mới           ☆☆☆","☆☆☆              Không đúng định dạng-- Vui lòng nhập lại             ☆☆☆",Validation.ORDER_NAME_REGEX);
+                                                orderService.findAll().get(index).setName(name);
                                                 System.out.println("☆☆☆           Thay đổi xong            ☆☆☆");
+                                                orderService.orderWrite();
                                                 break;
                                         }
 
                                         case 2 :{
-                                                System.out.println("☆☆☆          Nhập giá mới             ☆☆☆");
-                                                double price = Double.parseDouble(scanner.nextLine());
+                                                double price = Double.parseDouble(Validation.validation("☆☆☆                  Nhập giá dịch vụ mới           ☆☆☆","☆☆☆               Không đúng định dạng -- Nhập lại           ☆☆☆",Validation.ORDER_PRICE_REGEX));
                                                 orderService.findAll().get(index).setPrice(price);
                                                 System.out.println("☆☆☆            Thay đổi xong          ☆☆☆");
+                                                orderService.orderWrite();
                                                 break;
                                         }
                                         case 0: {
@@ -81,8 +83,7 @@ public class OrderView {
                                 }
 
                         }while (choice!=0);
-                }else System.out.println("☆☆☆             Không thấy có trong danh sách dịch vụ                ☆☆☆");
-                readAndWriteFile.writeToFile(OrderService.FILE_PATH, orderService.findAll());
+                }else System.err.println("☆☆☆             Không thấy có trong danh sách dịch vụ                ☆☆☆");
         }
         public void menuOrder(){
                 int choice = -1;

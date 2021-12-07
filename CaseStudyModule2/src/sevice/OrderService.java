@@ -35,7 +35,6 @@ public class OrderService implements IOrder {
 
     @Override
     public Order edit(int index) {
-        computerReadAndWriteFile.writeToFile(FILE_PATH,orders);
         return orders.get(index);
     }
 
@@ -47,6 +46,9 @@ public class OrderService implements IOrder {
             }
         }
         return -1;
+    }
+    public void orderWrite(){
+        computerReadAndWriteFile.writeToFile(FILE_PATH,orders);
     }
 
 

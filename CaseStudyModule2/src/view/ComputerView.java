@@ -15,7 +15,6 @@ public class ComputerView {
     ComputerService computerService = new ComputerService();
     RevenueView revenueView = new RevenueView();
     AccountView accountView = new AccountView();
-    ReadAndWriteFile<Computer> readAndWriteFile = new ReadAndWriteFile<>();
     public void computerShowList(){
         System.out.println("☆☆☆      Danh sách có "+computerService.findAll().size()+" máy    ☆☆☆");
         System.out.printf("%-20s %-20s %-20s %-20s\n","ID","Tên máy","Trạng thái","Dịch vụ");
@@ -53,11 +52,10 @@ public class ComputerView {
         while (true){
             int index = fineIndexByIdComputer();
             if (index>=0){
-                System.out.println("☆☆☆       Nhập tên muốn thay đổi       ☆☆☆");
-                String name =Validation.validation("☆☆☆     Nhập tên máy     ☆☆☆ ","☆☆☆     Không đúng định dạng -- Vui lòng nhập lại    ☆☆☆",Validation.COMPUTER_NAME_REGEX);
+                String name =Validation.validation("☆☆☆     Nhập tên muốn thay đổi    ☆☆☆ ","☆☆☆     Không đúng định dạng -- Vui lòng nhập lại    ☆☆☆",Validation.COMPUTER_NAME_REGEX);
                 computerService.findAll().get(index).setName(name);
                 System.out.println("☆☆☆        Bạn đã thay đổi thành công       ☆☆☆");
-                readAndWriteFile.writeToFile(ComputerService.FILE_PATH, computerService.findAll());
+                computerService.computerWrite();
                 break;
             }else System.err.println("☆☆☆       Không tồn tại máy theo ID nhập vào         ☆☆☆");
         }
@@ -91,7 +89,7 @@ public class ComputerView {
                     System.out.println("                                 🌸☆🌸☆🌸                           1. Có                          🌸☆🌸☆🌸");
                     System.out.println("                                 🌸☆🌸☆🌸                           0. Không                       🌸☆🌸☆🌸");
                     System.out.println("                                 🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸☆🌸🌸☆🌸☆🌸🌸☆🌸☆🌸");
-                    choice = Integer.parseInt(Validation.validation("Lựa chọn","Không đúng định dạng - Vui lòng nhập lại",Validation.CHOICE));
+                    choice = Integer.parseInt(Validation.validation("🌸☆🌸     Lựa chọn     🌸☆🌸"," 🌸☆🌸        Không đúng định dạng - Vui lòng nhập lại         🌸☆🌸",Validation.CHOICE));
                     switch (choice) {
                         case 1:{
                           computerService.delete(index);
