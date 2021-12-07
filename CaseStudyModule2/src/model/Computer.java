@@ -1,8 +1,6 @@
 package model;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 
 public class Computer implements Serializable {
@@ -12,7 +10,7 @@ public class Computer implements Serializable {
     private long startTime;
     private long endTime;
    private double date ;
-    private double moneyOnHour;
+    private double moneyOnHour=10000.0/3600.0;
   private  double money ;
   private List<Order> order;
 
@@ -104,9 +102,9 @@ public class Computer implements Serializable {
 
     @Override
     public String toString() {
-        return "Computer{" +
-                "id=" + id +
-                ", name='" + name + '\'' +", order = "+order+
-                '}';
+        return
+                 id +
+                "," + name +","+order
+                ;
     }
 }

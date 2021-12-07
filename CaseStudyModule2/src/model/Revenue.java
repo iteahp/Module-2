@@ -2,12 +2,12 @@ package model;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 public class Revenue implements Serializable {
     private double turnover;
     private String name;
     private LocalDateTime time;
+
     public Revenue() {
     }
 
@@ -43,9 +43,9 @@ public class Revenue implements Serializable {
 
     @Override
     public String toString() {
-        return "Revenue{" +", name='" + name + '\''+
-                "turnover=" + turnover +
-                ", time=" + time +
-                '}';
+        return  name +
+                "," + turnover +
+                "," + time
+               ;
     }
 }

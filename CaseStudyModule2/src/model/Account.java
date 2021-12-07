@@ -98,11 +98,10 @@ public class Account implements Serializable {
 
     @Override
     public String toString() {
-        return "Account{" +
-                "account='" + account + '\'' +
-                ", password='" + password + '\'' +
-                ", order=" + order +
-                ", money=" + money +
-                '}';
+        return account + "," +
+                 password + ","+
+                money   + "," + order
+                ;
     }
+
 }
