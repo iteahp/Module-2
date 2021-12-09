@@ -179,20 +179,22 @@ public class AccountView {
                             int indexComputer = computerView.fineIndexByIdComputer();
                             if (indexComputer>=0){
                                 if (!computerService.findAll().get(indexComputer).isStatus()){
+
                                     Account account = creatAccount();
                                     if (accountService.loginAccount(account)){
-                                        computerService.start(indexComputer);
-                                        int indexAccount = findIndexLoginAccount(account);
-                                        accountService.start(indexAccount);
-                                        menuUser(account,indexComputer,indexAccount);
+                                            int indexAccount = findIndexLoginAccount(account);
+                                            if (accountService.findAll().get(indexAccount).getMoney()!=0){
+                                                accountService.start(indexAccount);
+                                                computerService.start(indexComputer);
+                                                menuUser(account,indexComputer,indexAccount);
+                                                break;
+                                            }else System.err.println("      Tài khoản của quý khách đã hết tiền - vui lòng gặp chủ quán để nạp tiền     ");
+                                        break;
                                     }else System.err.println("🌸☆🌸           Tài khoản hoặc mật mã không đúng              🌸☆🌸");
-                                    break;
                                 }else System.out.println("🌸☆🌸                Máy đang online -- Nhập lại                   🌸☆🌸");
                             }else System.err.println(" 🌸☆🌸                  Không tìm thấy máy theo id nhập vào           🌸☆🌸");
                         }else break;
                         }
-
-
                     break;
                 }
                 case 0 :{

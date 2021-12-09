@@ -9,6 +9,7 @@ public class Product {
     private static int idNumber = 0;
 
     public Product() {
+
     }
 
     public Product(int id, String name, float price, int quantity, String moTa) {

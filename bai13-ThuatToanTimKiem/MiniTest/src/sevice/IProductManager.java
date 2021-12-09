@@ -4,7 +4,7 @@ import model.Product;
 
 import java.util.List;
 
-public interface IProductManager {
+public interface IProductManager{
    List<Product> findAll();
    void save(Product product);
    int findIndexById(int id);
@@ -14,6 +14,7 @@ public interface IProductManager {
    Product findProductMaxPrice();
    void readFile();
    void writeFile();
+   
 
 
 }
